@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let item of cart?.items" class="cart-item">
+    <span class="cart-item__name">{{item.name}}</span>
+    <span class="cart-item__price">{{item.price}} {{item.currency}}</span>
+  </li>
+</ul>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="cart__total">Total: {{cart.total}} {{cart.currency}}</div>
+  </div>
+</div>

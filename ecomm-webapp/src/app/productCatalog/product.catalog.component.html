@@ -1,0 +1,21 @@
+<div>
+  <div>
+    <span class="counter">Items in Cart: {{count}}</span>
+  </div>
+  <ul class="clearfix" style="margin-top: 40px;">
+    <li *ngFor="let data of products">
+      <div class="thumbnail">
+        <img [src]="'/static/'+data.image" alt="product image"/>
+        <div class="caption clearfix">
+          <h3><a href="data.url">{{data.name}}</a></h3>
+          <div class="product__price">{{data.price}} {{data.currency}}</div>
+          <div class="product__button-wrap">
+            <button class="btn btn-primary" (click)="addToCart(data)">Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <a routerLink="/cart" routerLinkActive="active">Go To Cart</a>
+</div>
