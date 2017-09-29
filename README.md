@@ -10,6 +10,8 @@ This sample e-commerce application demonstrates how to build an application usin
 The application is setup as multi-level gradle project where each microservice is arranged as a sub-module under single parent project. It enables to run each microservice individually.
 
 ##Prerequisites
+* **_MongoDB_** - Install MongoDB from(running on default port), https://www.mongodb.org/downloads
+* **_Redis_** - Install Redis from(running on default port), https://redis.io/download
 * **_JDK 8_** - Install JDK 1.8 version from, http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 * **_Gradle [Optional]_** - Download latest version of Gradle from https://gradle.org/gradle-download/ (binary distribution is good enough) and configure your machine with Gradle as specified at, https://docs.gradle.org/current/userguide/installation.html
 * **_Node.js_** - Install Node.js from, https://nodejs.org/en/download/
