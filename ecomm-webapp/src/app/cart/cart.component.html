@@ -1,3 +1,4 @@
+<div class="container">
 <ul>
   <li *ngFor="let item of cart?.items" class="cart-item">
     <span class="cart-item__name">{{item.name}}</span>
@@ -6,6 +7,7 @@
 </ul>
 <div class="panel panel-default">
   <div class="panel-body">
-    <div class="cart__total">Total: {{cart.total}} {{cart.currency}}</div>
+    <div class="cart__total">Total: {{cart?.total}} {{cart?.currency}}</div>
   </div>
+</div>
 </div>

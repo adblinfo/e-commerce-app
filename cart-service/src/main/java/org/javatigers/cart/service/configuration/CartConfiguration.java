@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -28,6 +29,7 @@ import lombok.RequiredArgsConstructor;
  * @author ad
  *
  */
+@EnableDiscoveryClient
 @SpringBootApplication
 @RequiredArgsConstructor
 public class CartConfiguration {
@@ -40,8 +42,9 @@ public class CartConfiguration {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(CartRepository cartRepository) {
+	public CommandLineRunner commandLineRunner(CartRepository cartRepository, RedisTemplate<String, Cart> redisTemplate) {
 		return strings -> {
+			redisTemplate.delete("123");
 			logger.info("Test");
 			Cart cart = cartRepository.addToCart(null,
 					CartItem.builder()
@@ -50,6 +53,7 @@ public class CartConfiguration {
 						.price(23.0f)
 						.build());
 			logger.info("Cart : {}.", cartRepository.findById(cart.getId()));
+			logger.info("Find 123 : {}.", cartRepository.findById("123"));
 		};
 	}
 
@@ -58,7 +62,7 @@ public class CartConfiguration {
 @Configuration
 @EnableCaching
 @EnableRedisRepositories
-@ComponentScan(basePackages = { "org.javatigers.ecommerce.repository", "org.javatigers.ecommerce.rest" })
+@ComponentScan(basePackages = { "org.javatigers.cart.service.repository", "org.javatigers.cart.service.rest" })
 class RedisCacheConfiguration extends CachingConfigurerSupport {
 	private static final Logger logger = LoggerFactory.getLogger(CartConfiguration.class);
 

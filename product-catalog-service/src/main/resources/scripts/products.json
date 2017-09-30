@@ -1,6 +1,6 @@
 [
 	{
-		"_class" : "org.javatigers.ecommerce.document.Product",
+		"_class" : "org.javatigers.product.service.document.Product",
 		"_id": 0,
 		"name": "DJI Phantom 3 Quadcopter Drone",
 		"description": "DJI Phantom 3 Standard Quadcopter Drone with 2.7K HD Video Camera",
@@ -10,7 +10,7 @@
 		"url": "https://www.amazon.com/DJI-Phantom-Standard-Quadcopter-Camera/dp/B013U0F6EQ/"
 	},
 	{
-		"_class" : "org.javatigers.ecommerce.document.Product",
+		"_class" : "org.javatigers.product.service.document.Product",
 		"_id": 1,
 		"name": "Autel Robotics X-Star Drone",
 		"description": "Autel Robotics X-Star Drone with 4K Camera & Wi-Fi HD Live View (Orange)",
@@ -20,7 +20,7 @@
 		"url": "https://www.amazon.com/Autel-Robotics-X-Star-Camera-Orange/dp/B01B1H80K2/"
 	},
 	{
-		"_class" : "org.javatigers.ecommerce.document.Product",
+		"_class" : "org.javatigers.product.service.document.Product",
 		"_id": 2,
 		"name": "UPair One Drone",
 		"description": "UPair One Drone with 2K Camera,5.8G FPV Monitor Transmit Live Video,2.4G Remote Controller, GPS Auto Return Function, a key to Return, Beginners Drone",

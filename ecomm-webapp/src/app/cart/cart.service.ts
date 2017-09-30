@@ -10,7 +10,7 @@ import {CartDto} from './cart.dto';
 @Injectable()
 export class CartService {
 
-  private baseUrl: String = 'http://localhost:48080/cart-api/api/v1/cart/';
+  private baseUrl: String = 'http://localhost:58080/cart-service/api/v1/cart/';
   cartItemOb:  BehaviorSubject<CartItemDto[]> = new BehaviorSubject(null);
   constructor(private http: Http) { }
 

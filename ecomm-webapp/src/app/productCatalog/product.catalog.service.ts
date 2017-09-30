@@ -7,7 +7,7 @@ import {ProductDto} from './product.dto';
 @Injectable()
 export class ProductCatalogService {
 
-  private baseUrl: String = 'http://localhost:38080/product-api/api/v1/products/';
+  private baseUrl: String = 'http://localhost:58080/product-catalog-service/api/v1/products/';
   constructor(private http: Http) { }
 
   getProductRecomendations (): Observable<ProductDto[]> {

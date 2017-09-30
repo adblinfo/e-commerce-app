@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.ClassPathResource;
@@ -21,8 +22,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author ad
  *
  */
-@EnableMongoRepositories(basePackages = { "org.javatigers.ecommerce.repository" })
-@ComponentScan(basePackages = "org.javatigers.ecommerce.rest")
+@EnableDiscoveryClient
+@EnableMongoRepositories(basePackages = { "org.javatigers.product.service.repository" })
+@ComponentScan(basePackages = "org.javatigers.product.service.rest")
 @SpringBootApplication
 public class ProductCatalogBoot {
 
@@ -34,9 +36,9 @@ public class ProductCatalogBoot {
 	@Bean
 	public CommandLineRunner commandLineRunner(ProductRepository productRepository) {
 		return strings -> {
-			/*productRepository.findAll()
+			productRepository.findAll()
 				.stream()
-				.forEach(product -> productRepository.delete(product));*/
+				.forEach(product -> productRepository.delete(product));
 			productRepository.save(Product.builder()
 					.currency("INR")
 					.description("DJI Phantom 3 Standard Quadcopter Drone with 2.7K HD Video Camera")

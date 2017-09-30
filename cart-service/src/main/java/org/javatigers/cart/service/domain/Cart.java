@@ -25,7 +25,7 @@ public class Cart implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -2767203441569534190L;
+	private static final long serialVersionUID = -7958015374248121495L;
 	private String id;
 	private List<CartItem> items;
 	private float total;
