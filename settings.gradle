@@ -10,6 +10,7 @@
 
 
 // To declare projects as part of a multi-project build use the 'include' method
+include 'config-server'
 include 'product-catalog-service'
 include 'cart-service'
 rootProject.name = 'e-commerce-app'
